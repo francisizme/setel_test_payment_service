@@ -7,6 +7,8 @@ import { PaymentController } from './payment.controller';
 
 import { PaymentRepository } from './repositories/payment.repository';
 
+import config from '../../config';
+
 @Module({
   imports: [
     TypeOrmModule.forFeature([PaymentRepository]),
@@ -15,8 +17,8 @@ import { PaymentRepository } from './repositories/payment.repository';
         name: 'AUTH_CLIENT',
         transport: Transport.RMQ,
         options: {
-          urls: ['amqp://localhost:5672'],
-          queue: 'auth_queue',
+          urls: [config.amqp.url],
+          queue: config.amqp.auth_queue,
           queueOptions: {
             durable: false,
           },
@@ -26,8 +28,8 @@ import { PaymentRepository } from './repositories/payment.repository';
         name: 'ORDER_CLIENT',
         transport: Transport.RMQ,
         options: {
-          urls: ['amqp://localhost:5672'],
-          queue: 'order_queue',
+          urls: [config.amqp.url],
+          queue: config.amqp.order_queue,
           queueOptions: {
             durable: false,
           },
