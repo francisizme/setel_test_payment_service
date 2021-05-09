@@ -11,7 +11,7 @@ async function bootstrap() {
     transport: Transport.RMQ,
     options: {
       urls: [config.amqp.url],
-      queue: config.amqp.queue,
+      queue: config.amqp.payment_queue,
       queueOptions: {
         durable: false,
       },
