@@ -30,6 +30,7 @@
     "@nestjs/typeorm": "^7.1.5",
     "amqp-connection-manager": "^3.2.2",
     "amqplib": "^0.7.1",
+    "dotenv": "^9.0.0",
     "mysql": "^2.18.1",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
